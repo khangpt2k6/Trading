@@ -7,3 +7,4 @@ function(tf_add_test name)
 endfunction()
 
 tf_add_test(sanity_test sanity_test.cpp)
+tf_add_test(spsc_ring_test spsc_ring_test.cpp)
