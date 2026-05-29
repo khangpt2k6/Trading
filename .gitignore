@@ -1,0 +1,34 @@
+# Build output
+/build/
+/build-*/
+/out/
+cmake-build-*/
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.exe
+
+# WASM build artifacts
+*.wasm
+*.wasm.map
+/wasm/build/
+/web/dist/
+
+# Emscripten SDK (installed locally, not vendored)
+/third_party/emsdk/
+
+# Node
+node_modules/
+package-lock.json.bak
+
+# Benchmark output
+/bench/results/*.csv
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
