@@ -1,0 +1,8 @@
+# Build and run on Linux/WSL: normalize all text to LF in the repo.
+* text=auto eol=lf
+
+# Binary assets (no EOL conversion)
+*.wasm binary
+*.png binary
+*.jpg binary
+*.ico binary
