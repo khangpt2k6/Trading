@@ -32,3 +32,11 @@ package-lock.json.bak
 .idea/
 *.swp
 .DS_Store
+
+# Claude Code / AI tooling - never commit
+.claude/
+.claude/**
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
+*.local.json
