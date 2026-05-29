@@ -22,7 +22,7 @@ find_package(Threads REQUIRED)
 
 add_subdirectory(engine)
 
-if(TF_BUILD_TESTS)
+if(TF_BUILD_TESTS AND EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/tests/CMakeLists.txt)
   enable_testing()
   include(FetchContent)
   FetchContent_Declare(
@@ -35,6 +35,6 @@ if(TF_BUILD_TESTS)
   add_subdirectory(tests)
 endif()
 
-if(TF_BUILD_BENCH)
+if(TF_BUILD_BENCH AND EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/bench/CMakeLists.txt)
   add_subdirectory(bench)
 endif()
