@@ -1,0 +1,3 @@
+add_executable(tradeflow_bench src/bench_main.cpp)
+target_include_directories(tradeflow_bench PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_link_libraries(tradeflow_bench PRIVATE tradeflow_engine)

@@ -7,6 +7,7 @@
 #include "tradeflow/matching_engine.hpp"
 #include "tradeflow/mpsc_ring.hpp"
 #include "tradeflow/order.hpp"
+#include "tradeflow/spin.hpp"
 
 namespace tradeflow {
 
@@ -58,8 +59,9 @@ private:
         processed_.fetch_add(1, std::memory_order_relaxed);
       } else if (stop_when_empty_.load(std::memory_order_acquire)) {
         break;
+      } else {
+        cpu_relax();  // ring empty: pause to free the core while we wait
       }
-      // else: spin (busy-poll for lowest latency)
     }
   }
 
