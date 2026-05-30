@@ -4,7 +4,7 @@ set -euo pipefail
 
 echo "==> Updating apt and installing build tools"
 sudo apt-get update -y
-sudo apt-get install -y build-essential cmake ninja-build git pkg-config curl ca-certificates
+sudo apt-get install -y build-essential cmake ninja-build git pkg-config curl ca-certificates zlib1g-dev
 
 echo "==> Toolchain versions"
 g++ --version | head -1

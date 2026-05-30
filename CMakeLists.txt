@@ -11,6 +11,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
 
 option(TF_BUILD_TESTS "Build tests" ON)
 option(TF_BUILD_BENCH "Build benchmark" ON)
+option(TF_BUILD_TOOLS "Build CLI tools (need zlib)" ON)
 option(TF_SANITIZE_THREAD "Build with ThreadSanitizer" OFF)
 
 if(TF_SANITIZE_THREAD)
@@ -37,4 +38,8 @@ endif()
 
 if(TF_BUILD_BENCH AND EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/bench/CMakeLists.txt)
   add_subdirectory(bench)
+endif()
+
+if(TF_BUILD_TOOLS AND EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/tools/CMakeLists.txt)
+  add_subdirectory(tools)
 endif()

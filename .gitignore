@@ -27,6 +27,12 @@ package-lock.json.bak
 # Benchmark output
 /bench/results/*.csv
 
+# Market data - large, never committed (lives in WSL-native fs by default)
+tradeflow_data/
+*.NASDAQ_ITCH50*
+*.itch
+*.itch.gz
+
 # Editor / OS
 .vscode/
 .idea/
